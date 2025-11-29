@@ -1,0 +1,104 @@
+frontend/
+├── public/
+│   ├── favicon.ico
+│   └── index.html
+│
+├── src/
+│   ├── app/
+│   │   ├── App.jsx                  # Root Component
+│   │   ├── main.jsx                 # Entry Point
+│   │   ├── routes/
+│   │   │   ├── AppRoutes.jsx        # Combines Landing + Admin Routes
+│   │   │   ├── PrivateRoute.jsx
+│   │   │   └── RoleBasedRoute.jsx   # For admin/user separation
+│   │   └── providers/
+│   │       ├── ThemeProvider.jsx
+│   │       └── ReduxProvider.jsx
+│   │
+│   ├── config/
+│   │   ├── axiosClient.js           # Axios + Interceptors setup
+│   │   ├── envConfig.js             # Centralized env variables
+│   │   ├── constants.js             # API endpoints, roles
+│   │   └── themeConfig.js           # Light/Dark mode setup
+│   │
+│   ├── core/
+│   │   ├── components/              # Reusable global components
+│   │   │   ├── Loader.jsx
+│   │   │   ├── Modal.jsx
+│   │   │   ├── Button.jsx
+│   │   │   ├── Input.jsx
+│   │   │   └── Pagination.jsx
+│   │   ├── hooks/                   # Reusable custom hooks
+│   │   │   ├── useAuth.js
+│   │   │   ├── useFetch.js
+│   │   │   └── useTheme.js
+│   │   ├── layouts/                 # Common Layouts
+│   │   │   ├── MainLayout.jsx
+│   │   │   └── AdminLayout.jsx
+│   │   └── utils/                   # Helper functions
+│   │       ├── formatPrice.js
+│   │       ├── storage.js
+│   │       └── validators.js
+│   │
+│   ├── features/                    # Redux + RTK Query features
+│   │   ├── auth/
+│   │   │   ├── authApi.js
+│   │   │   └── authSlice.js
+│   │   ├── products/
+│   │   │   ├── productApi.js
+│   │   │   └── productSlice.js
+│   │   ├── cart/
+│   │   │   ├── cartSlice.js
+│   │   │   └── cartApi.js
+│   │   ├── orders/
+│   │   │   ├── orderSlice.js
+│   │   │   └── orderApi.js
+│   │   └── users/
+│   │       ├── userSlice.js
+│   │       └── userApi.js
+│   │
+│   ├── modules/                     # 🎯 Feature modules (Landing & Admin separated)
+│   │   ├── landing/
+│   │   │   ├── components/          # Landing-only components
+│   │   │   │   ├── HeroSection.jsx
+│   │   │   │   ├── ProductCard.jsx
+│   │   │   │   └── CategoryBanner.jsx
+│   │   │   ├── pages/
+│   │   │   │   ├── Home.jsx
+│   │   │   │   ├── ProductDetail.jsx
+│   │   │   │   ├── Cart.jsx
+│   │   │   │   ├── Wishlist.jsx
+│   │   │   │   └── Checkout.jsx
+│   │   │   └── routes/LandingRoutes.jsx
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── components/          # Dashboard components
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── Topbar.jsx
+│   │   │   │   ├── Chart.jsx
+│   │   │   │   └── SummaryCard.jsx
+│   │   │   ├── pages/
+│   │   │   │   ├── Dashboard.jsx
+│   │   │   │   ├── Products.jsx
+│   │   │   │   ├── Orders.jsx
+│   │   │   │   ├── Users.jsx
+│   │   │   │   └── Settings.jsx
+│   │   │   └── routes/AdminRoutes.jsx
+│   │
+│   ├── redux/
+│   │   ├── store.js                 # Redux Store
+│   │   └── rootReducer.js           # Combine all slices
+│   │
+│   ├── styles/
+│   │   ├── global.css
+│   │   ├── tailwind.css
+│   │   └── theme.css
+│   │
+│   ├── index.css
+│   └── setupTests.js
+│
+├── .env
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+└── vite.config.js
